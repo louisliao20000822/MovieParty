@@ -1,0 +1,300 @@
+
+.navbar{
+
+    background-color: rgba(159, 168, 168, 0.438);
+    height : 100px;
+    
+
+}
+.search-icon{
+  color: white;
+}
+.navbar-brand img{
+width: 120px;
+height: 48px;
+}
+
+.product-img{
+width: 360px;
+height: 480px;
+
+}
+
+.member-img{
+    color: white;
+}
+
+.nav-item .active{
+color: #bd291f !important;
+}
+
+header .navbar-nav .nav-item{
+font-weight: 400;
+font-size: 20px;
+line-height: 28px;
+padding-left: 10px;
+color : white;
+letter-spacing: 30px;
+}
+
+
+
+#black-bar{
+background-color:#202224;
+padding: 20px;
+
+}
+.input-group{
+background: url(../images/search.png);
+}
+
+#span-circle{
+    position : absolute;
+    border-radius: 50%;
+    background: #8B572A;
+    width : 20px;
+    height: 20px;
+    font-family: 'Noto Sans TC';
+    font-size: 16px;
+    text-align: center;
+    bottom: 10%;
+    left: 40%;
+    color: #FFFFFF;
+}
+
+*{
+font-family: Noto Sans TC;
+}
+
+/* #main-png{
+height: 500px;
+} */
+
+
+
+.vr{
+border: 1px solid white;
+}
+
+
+#black-vr{
+border: 1px solid black;
+}
+
+.color-box{
+height: 24px;
+width: 24px;
+border: 1px solid #D3D3D3;
+}
+
+.input-box{
+position: relative;
+}
+
+.input-box img {
+position: absolute;
+right: 0px;
+top:0px;
+}
+
+div .form-control{
+width:214px;
+height: 44px;
+border-radius: 20px;
+color: #8B572A;
+}
+
+
+
+.carousel-caption p ,
+.carousel-caption h5{
+text-align: left;
+color: #070707;
+font-size: 2vw;
+font-weight: 400;
+}
+
+
+footer .nav-link{
+
+font-family: 'Noto Sans TC';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 22px;
+/* identical to box height, or 138% */
+
+text-align: center;
+
+color: #F5F5F5;
+}
+
+.rights{
+font-weight: 400;
+font-size: 12px;
+line-height: 17px;
+text-align: center;
+
+color: #828282;
+}
+
+@media (max-width: 1199px) {
+.navbar-nav{
+background-color: #202224;
+}    
+.navbar-nav .nav-item{
+color:#fdfdfc;
+}
+
+.nav-item .active{
+color: white !important;
+}
+footer .navbar{
+margin-bottom: 30px;
+}
+
+.info-mobile{
+display: flex;
+font-size: 12px;
+justify-content: space-between;
+}
+
+#black-vr{
+border: 1px solid white;
+}
+
+.social-link{
+margin-top: 20px;
+margin-left: 50px;
+}
+
+
+.footer-mobile{
+height:auto;
+height: 250px;
+
+}
+
+footer .nav-link{
+align-items: center;
+color: azure;
+padding: 20px;
+}
+footer{
+
+display: flex;
+
+}
+.product-img{
+width: 300px;
+height: 400px;
+
+}
+}
+@media (max-width: 767px) {
+.navbar-nav{
+background-color: #202224;
+}    
+.navbar-nav .nav-item{
+color:#817a73;
+}
+
+.nav-item .active{
+color: white !important;
+}
+footer .navbar{
+margin-bottom: 30px;
+}
+
+.info-mobile{
+display: flex;
+font-size: 12px;
+justify-content: space-between;
+}
+
+#black-vr{
+border: 1px solid white;
+}
+
+.social-link{
+margin-top: 20px;
+margin-left: 50px;
+}
+
+
+.footer-mobile{
+height:auto;
+height: 250px;
+
+}
+
+footer .nav-link{
+align-items: center;
+color: azure;
+padding: 20px;
+}
+footer{
+
+display: flex;
+
+}
+.product-img{
+width: 250px;
+height: 300px;
+
+}
+}
+
+
+.search-container{
+  background: #fff;
+  height: 30px;
+  border-radius: 30px;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.8s;
+  /*box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+  inset -7px -7px 10px 0px rgba(0,0,0,.1),
+ 7px 7px 20px 0px rgba(0,0,0,.1),
+ 4px 4px 5px 0px rgba(0,0,0,.1);
+ text-shadow:  0px 0px 6px rgba(255,255,255,.3),
+            -4px -4px 6px rgba(116, 125, 136, .2);
+text-shadow: 2px 2px 3px rgba(255,255,255,0.5);*/
+box-shadow:  4px 4px 6px 0 rgba(255,255,255,.3),
+            -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+  inset -4px -4px 6px 0 rgba(255,255,255,.2),
+  inset 4px 4px 6px 0 rgba(0, 0, 0, .2);
+}
+
+.search-container:hover > .search-input{
+  width: 400px;
+}
+
+.search-container .search-input{
+  background: transparent;
+  border: none;
+  outline:none;
+  width: 0px;
+  font-weight: 500;
+  font-size: 16px;
+  transition: 0.8s;
+
+}
+
+.search-container .search-btn .fas{
+  color: #5cbdbb;
+}
+
+@keyframes hoverShake {
+0% {transform: skew(0deg,0deg);}
+25% {transform: skew(5deg, 5deg);}
+75% {transform: skew(-5deg, -5deg);}
+100% {transform: skew(0deg,0deg);}
+}
+
+.search-container:hover{
+animation: hoverShake 0.15s linear 3;
+}
