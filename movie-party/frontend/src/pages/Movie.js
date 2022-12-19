@@ -17,7 +17,7 @@ const Movie = () => {
     useEffect(() => {
         (async () => {
             const response = await axios.get(
-              `http://localhost:4000/video${mId}`
+              `http://44.235.8.206/video${mId}`
             ); 
             setData(response.data.result);
         })();

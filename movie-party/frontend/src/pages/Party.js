@@ -26,7 +26,7 @@ const Party = () => {
     }
     const connectWebSocket = () => {
         //開啟
-         setWs(webSocket('http://localhost:4000'));
+         setWs(webSocket('http://44.235.8.206'));
     }
 
 
@@ -57,7 +57,7 @@ const Party = () => {
     useEffect(() => {
         (async () => {
             const response = await axios.get(
-              `http://localhost:4000/video`
+              `http://44.235.8.206/video`
             ); 
             setData(response.data.result);
         })();
@@ -373,7 +373,7 @@ const Party = () => {
               <body>
                 <div className="video-box">
                   <div className="player" id="player">
-                    <video className="player_video viewer movie-box"  ref={refvideo} id="video" src={`http://localhost:4000/video${mId} `} onClick={handleclick}></video>
+                    <video className="player_video viewer movie-box"  ref={refvideo} id="video" src={`http://44.235.8.206/video${mId} `} onClick={handleclick}></video>
                     <div className="player_controls" onClick={handleseek}>
                       <div className="progress-range" title="Jump-to">
                         <div className="progress-bar" ></div>

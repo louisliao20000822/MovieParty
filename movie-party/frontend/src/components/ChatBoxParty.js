@@ -7,7 +7,7 @@ const ChatBoxParty = (props) => {
     useEffect(() => {
         (async () => {
             const response = await axios.get(
-              `http://localhost:4000/api/1.0/chat/party/${props.mId}?room=${props.rId}`
+              `http://44.235.8.206/api/1.0/chat/party/${props.mId}?room=${props.rId}`
             ); 
             const interval = setTimeout(() => {
               setData(response.data.result);
@@ -44,7 +44,7 @@ const ChatBoxParty = (props) => {
         // 👇️ prevent page refresh
         event.preventDefault();
         const response = await axios.post(
-          `http://localhost:4000/api/1.0/party/insertchat`,[{"mId" : props.mId,
+          `http://44.235.8.206/api/1.0/party/insertchat`,[{"mId" : props.mId,
                                                       "user_name" : window.localStorage.getItem('Name'),
                                                       "content" : event.target.id.value,
                                                       "report_time" : 0,
