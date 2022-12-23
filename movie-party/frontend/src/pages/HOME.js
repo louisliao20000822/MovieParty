@@ -8,7 +8,8 @@ import Movie from './Movie'
 import Header from './Header';
 import Body from './Body'
 import Member from './Member';
-import Footer from './footer'
+import Footer from './footer';
+import Room from './Room';
 // import Test from './test'
 import {useParams} from "react-router-dom";
 
@@ -26,7 +27,7 @@ function HOME() {
         {/* <Route path= "Test" element={<><Test/></>}/> */}
         <Route path= "Member" element={<><Member/></>}/>
         <Route path= {"Movie/:mId"} element={<><Movie/></>}/>  
-        <Route path= {"Party/:mId"} element={<><Party/></>}/>
+        <Route path= {"Party/:mId"} element={<><Room/></>}/>
         {/* <Route path = {"Select/" element={<><Box /></>}} */}
       
     </Routes>

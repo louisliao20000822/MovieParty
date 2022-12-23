@@ -10,8 +10,10 @@ const getChat = async (req,res) =>{
 }
 
 const getRoom = async (req,res) =>{
-    var rId = req.params.room;
-    const result = await Chat.getRoom(rId);
+    var rId = req.query.room;
+    var code = req.params.id;
+    console.log(`code :  ${code} rId : ${rId}`);
+    const result = await Chat.getRoom(rId,code);
     res.status(200).send({
         result:result
     })
@@ -61,7 +63,7 @@ const insertChatMovie = async (req, res) => {
 };
 
 const createRoom = async (req,res) =>{
-    const insertID = await Chat.createRoom(req.body[0].mId);
+    const insertID = await Chat.createRoom(req.body[0].mId,req.body[0].code);
     console.log(insertID);
     return insertID;
     

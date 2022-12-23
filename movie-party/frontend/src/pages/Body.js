@@ -29,17 +29,16 @@ const Body = () => {
                     <div class="title-wrapper">
                     <p class="section-subtitle">Online Streaming</p>
 
-                    <h2 class="h2 section-title">Movies</h2>
                     </div>
 
                     <ul class="filter-list">
 
                     <li>
-                        <button class="filter-btn">Movies</button>
+                        <button class="filter-btn">Marvel</button>
                     </li>
 
                     <li>
-                        <button class="filter-btn">TV Shows</button>
+                        <button class="filter-btn">Comedy</button>
                     </li>
 
                     <li>
@@ -49,6 +48,7 @@ const Body = () => {
                     </ul>
 
                 </div>
+                <h2 class="h2 section-title">Marvel</h2>    
 
                 <ul class="movies-list ">
 
@@ -57,11 +57,24 @@ const Body = () => {
 
                         {
                                 data.map((Data, i) =>
-                                    <InsertMovie data = {Data} />
+                                    <InsertMovie data = {Data} cate={"marvel"}/>
                         )}      
 
                 </ul>
-
+                <h2 class="h2 section-title">Comedy</h2>
+                <ul class="movies-list ">
+                        {
+                                data.map((Data, i) =>
+                                    <InsertMovie data = {Data} cate={"comedy"}/>
+                        )}    
+                </ul>        
+                <h2 class="h2 section-title">Anime</h2>
+                <ul class="movies-list ">
+                        {
+                                data.map((Data, i) =>
+                                    <InsertMovie data = {Data} cate={"anime"}/>
+                        )}
+                </ul>    
                 </div>
             </section>
         </article>    

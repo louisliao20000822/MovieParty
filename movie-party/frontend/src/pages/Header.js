@@ -50,7 +50,7 @@ const Header = () => {
                             <button class="btn btn-primary mt-1">Sign in</button>
                             }
                             {localStorage.getItem('Name')&&
-                            <button class="btn btn-primary mt-1" onClick={()=>{localStorage.removeItem('Name')}}>Log out</button>}
+                            <button class="btn btn-primary mt-1"  onClick={()=>{localStorage.removeItem('Name')}}>Log out</button>}
                         </a>
                     </div>
                 </div>

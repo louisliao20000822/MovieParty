@@ -6,7 +6,18 @@ import api from "../api/api"
 function InsertMovie(props){
     let navigate = useNavigate(); 
     let mId = props.data.mId;
-    let name = `favDialog${mId}`
+    let name = `favDialog${mId}`;
+    const characters ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+    function generateString(length) {
+        let result = ' ';
+        const charactersLength = characters.length;
+        for ( let i = 0; i < length; i++ ) {
+            result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        }
+
+        return result;
+    }
     function dialog(){
         if(!localStorage.getItem('Name'))
             alert("請先登入");
@@ -19,8 +30,8 @@ function InsertMovie(props){
         }        
     }
     function navi_party(){
-        
-        api.getRoom(data.mId).then((json)=> {console.log(json);navigate(`/Party/${data.mId}?room=${json.rId}`);})
+        let r = generateString(9);
+        api.getRoom(data.mId,r).then((json)=> {console.log(json);navigate(`/Party/${r}?room=${json.rId}`);})
     }
 
     function navi_movie(){
@@ -35,6 +46,7 @@ function InsertMovie(props){
     const data = props.data;
     var image = `../images/${data.image}`;
     console.log(image);
+    if(props.data.category!=props.cate) return null;
     return(
 
         <li>
@@ -70,12 +82,16 @@ function InsertMovie(props){
 
             </div>
             <div>
-                    <dialog id={name}>
-                        <form method="dialog">
-                            <h3>{data.title}</h3><br/>
-                            <button onClick={() => navi_movie()}>watch Online</button>
-                            <button onClick={() => navi_party()}>watch with friends</button>
-                            <button  value="cancel">Close</button>
+                    <dialog id={name} className="dialog">
+                        <form method="dialog"  >
+                            <div className="modal-my justify-content-center d-flex flex-column">
+                                <h3 className='title mb-2'>{data.title}</h3>
+                                <img className="mb-4"  src={data.image}/>
+                            </div>    
+                                <button className='modal__btn' onClick={() => navi_movie()}>watch Online</button>
+                                <button className='modal__btn'  onClick={() => navi_party()}>watch with friends</button>
+                                <button  className='modal__btn' value="cancel">Close</button>
+
                         </form>
                     </dialog>
                     <output></output>

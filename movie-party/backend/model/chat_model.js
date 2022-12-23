@@ -6,14 +6,15 @@ const getChat = async (mId,rId) => {
     return result;
 }
 
-const getRoom = async (rId) => {
-    const result = await mysql.query('SELECT * FROM party WHERE rId = ?',[rId]);
+const getRoom = async (rId,code) => {
+    console.log(rId);
+    const result = await mysql.query('SELECT * FROM party WHERE id = ? and code = ?',[rId,code]);
     return result;
 }
 
 
 const getChatMovie = async (time,mId) => {
-    const result = await mysql.query('SELECT * FROM chat_movie WHERE mId = ? and time < ?',[mId, parseFloat(time)]);
+    const result = await mysql.query('SELECT * FROM chat_movie WHERE mId = ? and time < ? ORDER BY time ASC',[mId, parseFloat(time)]);
     return result;
 }
 
@@ -31,8 +32,8 @@ const insertChatMovie = async (chat) => {
     return result;
 }    
 
-const createRoom = async(mId) =>{
-    const result = await mysql.query('INSERT INTO party (mId) VALUES (?)',[mId]);
+const createRoom = async(mId,code) =>{
+    const result = await mysql.query('INSERT INTO party (mId,code) VALUES (?,?)',[mId,code]);
     console.log(result.insertId);
     return result.insertId;    
 }

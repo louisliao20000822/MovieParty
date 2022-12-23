@@ -8,8 +8,8 @@ import ProgressBar from '../components/ProgressBar';
 import {useParams,useLocation, Navigate} from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
-const Party = () => {
-    var {mId} = useParams();
+const Party = (props) => {
+    var mId = props.mId;
     console.log(mId);
     const useQuery = () => new URLSearchParams(useLocation().search);
     const query = useQuery();
@@ -26,7 +26,7 @@ const Party = () => {
     }
     const connectWebSocket = () => {
         //開啟
-         setWs(webSocket('http://44.235.8.206:4000'));
+         setWs(webSocket('http://localhost:4000'));
     }
 
 
@@ -40,7 +40,7 @@ const Party = () => {
     useEffect(()=>{
       if(ws){
           //連線成功在 console 中打印訊息
-          ws.emit('join', {"room" : query.get('room')});
+          ws.emit('join', {"room" : query.get('room'),"name" :localStorage.getItem('Name') });
           console.log('success connect!')
           //設定監聽
 
@@ -57,7 +57,7 @@ const Party = () => {
     useEffect(() => {
         (async () => {
             const response = await axios.get(
-              `http://44.235.8.206:4000/video`
+              `http://localhost:4000/`
             ); 
             setData(response.data.result);
         })();
@@ -309,6 +309,7 @@ const Party = () => {
         ws.on('connect' , () => {
           sendMessageLess({connect : ws.id,"room" : query.get('room')})
         });   
+
       }
 
     const sendMessage = (message) => {
@@ -373,7 +374,7 @@ const Party = () => {
               <body>
                 <div className="video-box">
                   <div className="player" id="player">
-                    <video className="player_video viewer movie-box"  ref={refvideo} id="video" src={`http://44.235.8.206:4000/video${mId} `} onClick={handleclick}></video>
+                    <video className="player_video viewer movie-box"  ref={refvideo} id="video" src={`http://localhost:4000/video${mId} `} onClick={handleclick}></video>
                     <div className="player_controls" onClick={handleseek}>
                       <div className="progress-range" title="Jump-to">
                         <div className="progress-bar" ></div>
@@ -399,6 +400,7 @@ const Party = () => {
               </body>
 
                 <ChatBoxParty mId={mId} rId={query.get('room')}/>
+                
             </div>
             
         </>

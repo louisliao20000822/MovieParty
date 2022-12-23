@@ -13,8 +13,12 @@ app.use('/api/1.0',require('./route/chat'));
 app.use('/api/1.0',require('./route/movie'));
 app.use('/api/1.0',require('./route/user'));
 
+const list = [];
+const member ={};
+const room = {};
 
-
+for(let i=0;i<100000;i++)
+    list.push([]);
 
 
 app.get('/video1',(req,res) =>{
@@ -35,22 +39,43 @@ app.get('/video3',(req,res) =>{
     res.sendFile(resolverPath);
 })
 
-app.get('/video3',(req,res) =>{
+app.get('/video4',(req,res) =>{
     const VIDEO_FILE_PATH = 'assert/iron-man.mp4'
     const resolverPath = path.resolve(VIDEO_FILE_PATH);
     res.sendFile(resolverPath);
 })
-app.get('/video3',(req,res) =>{
+app.get('/video5',(req,res) =>{
     const VIDEO_FILE_PATH = 'assert/thor.mp4'
     const resolverPath = path.resolve(VIDEO_FILE_PATH);
     res.sendFile(resolverPath);
 })
 
+app.get('/video5',(req,res) =>{
+    const VIDEO_FILE_PATH = 'assert/thor.mp4'
+    const resolverPath = path.resolve(VIDEO_FILE_PATH);
+    res.sendFile(resolverPath);
+})
 
+app.get('/video5',(req,res) =>{
+    const VIDEO_FILE_PATH = 'assert/thor.mp4'
+    const resolverPath = path.resolve(VIDEO_FILE_PATH);
+    res.sendFile(resolverPath);
+})
 
-const server = app.listen(4000, () => {
+app.get('/video5',(req,res) =>{
+    const VIDEO_FILE_PATH = 'assert/thor.mp4'
+    const resolverPath = path.resolve(VIDEO_FILE_PATH);
+    res.sendFile(resolverPath);
+})
+
+app.get('/friendlist',(req,res) =>{
+    res.send(list);
+})
+
+  const server = app.listen(4000, () => {
 	console.log('The application is running on localhost:4000!')
 });
+
 
 const io = require('socket.io')(server, {
     cors: {
@@ -58,13 +83,20 @@ const io = require('socket.io')(server, {
     }
   });
 
+
+
+
 //監聽 Server 連線後的所有事件，並捕捉事件 socket 執行
 io.on('connection', socket => {
     //經過連線後在 console 中印出訊息
     console.log('success connect!')
     socket.on('join', message => {
         //回傳 message 給發送訊息的 Client
-        socket.join(message.room)
+        // member[socket.id]= message.name;
+        // room[socket.id] = message.room;
+        // list[message.room].push(message.name);
+        socket.join(message.room);
+
     })
     //監聽透過 connection 傳進來的事件
     socket.on('getMessage', message => {
@@ -82,5 +114,13 @@ io.on('connection', socket => {
         console.log(id);
         io.to(id).emit("getMessageid", message);
     })
+
+    socket.on("disconnect", () => {
+        // list[room[socket.id]].pop(member[socket.id]);
+        console.log("dis:"+list[142]);
+    });
     
 })
+
+
+

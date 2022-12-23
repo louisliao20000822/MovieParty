@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
 const {
-    getChat,insertChat,createRoom,getChatMovie,insertChatMovie
+    getChat,insertChat,createRoom,getChatMovie,insertChatMovie,getRoom
 } = require('../controller/chat_controller');
 
 

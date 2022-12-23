@@ -18,13 +18,17 @@ const Member = () => {
         const formData = new FormData(event.target);
         const formProps = Object.fromEntries(formData);
         console.log(formProps);
-        api.signIn(formProps.name,formProps.password).then((json)=> {console.log(json);localStorage.setItem("Name", formProps.name);navigate("/");})
+        api.signIn(formProps.name,formProps.password).then((json)=> {console.log(json);
+                                                                    if(json.msg =="登入成功")
+                                                                    {localStorage.setItem("Name", formProps.name);navigate("/");window.location.reload(false);}
+                                                                    else   
+                                                                        alert(json.msg)})
     }
     const signUp = event =>{
         event.preventDefault()
         const formData = new FormData(event.target);
         const formProps = Object.fromEntries(formData);
-        api.signUp(formProps.name,formProps.password).then((json)=> {console.log(json);})
+        api.signUp(formProps.name,formProps.password).then((json)=> {console.log(json);alert(json.msg)})
     }
     return(
         <div class="wrapper fadeInDown mt-5">
@@ -62,7 +66,7 @@ const Member = () => {
                     <input type="text" id="login" class="fadeIn second" name="name" placeholder="User Name"/>
                     <input type="password" id="password" class="fadeIn third" name="password" placeholder="Password"/>
                     <input type="password" id="password" class="fadeIn third" name="c_password" placeholder="Password"/>
-                    <input type="submit" value="Log In" />
+                    <input type="submit" value="Sign Up" />
                 </form>
 
 

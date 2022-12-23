@@ -9,7 +9,7 @@ const ChatBoxMovie = (props) => {
         (async () => {
             var movie = document.querySelector("video");            
             const response = await axios.get(
-              `http://44.235.8.206:4000/api/1.0/chat/movie/${props.mId}?time=${movie.currentTime}`
+              `http://localhost:4000/api/1.0/chat/movie/${props.mId}?time=${movie.currentTime}`
             ); 
             const interval = setTimeout(() => {
               setData(response.data.result);
@@ -26,14 +26,14 @@ const ChatBoxMovie = (props) => {
                 return (
                   <div class="d-flex flex-row p-3">
                   <img src="https://img.icons8.com/color/48/000000/circled-user-female-skin-type-7.png" width="30" height="30"/>
-                  <div class="chat ml-2 p-3"><span class="text-muted dot">{chat.content}</span></div>
+                  <div class="chat ml-2 p-3"><span class="text-muted dot"><div>{chat.user_name+":"}</div><h6>{chat.content}</h6></span></div>
                   </div>
                   
                 );
               else
                 return(
                   <div class="d-flex flex-row p-3 justify-content-end">
-                  <div class="bg-white mr-2 p-3"><span class="text-muted">{chat.content}</span></div>
+                  <div class="bg-white mr-2 p-3"><div>{chat.user_name+":"}</div><span class="text-muted"><h6>{chat.content}</h6></span></div>
                   <img src="https://img.icons8.com/color/48/000000/circled-user-male-skin-type-7.png" width="30" height="30"/>
                 </div>
                 );
@@ -47,7 +47,7 @@ const ChatBoxMovie = (props) => {
         var movie = document.querySelector("video");
         event.preventDefault();
         const response = await axios.post(
-          `http://44.235.8.206:4000/api/1.0/movie/insertchat`,[{"mId" : props.mId,
+          `http://localhost:4000/api/1.0/movie/insertchat`,[{"mId" : props.mId,
                                                       "user_name" : window.localStorage.getItem('Name'),
                                                       "content" : event.target.id.value,
                                                       "report_time" : 0,
@@ -72,7 +72,7 @@ const ChatBoxMovie = (props) => {
                     </div>
                     <form onSubmit={handleSubmit} class="form-group px-3 mt-auto">
                         <textarea class="form-control" rows="5" placeholder="Type your message" name="id"></textarea>
-                        <button type="Submit">Submit</button>
+                        <button type="submit"  className="button-33 mt-4 mb-4" onClick={()=>{}} >Submit</button>
                     </form>
                 </div>
             </div>

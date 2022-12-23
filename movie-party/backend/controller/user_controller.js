@@ -18,7 +18,9 @@ async function  CreateUser (req,res){
 	const hashedPassword = await bcrypt.hash(req.body.password,10);
 	try{
 		return await User.CreateUser(user_name,hashedPassword);
+
 	}catch (err) {
+		console.log(err);
 		return err;
 	}
 }

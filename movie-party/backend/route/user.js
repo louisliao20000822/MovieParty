@@ -14,7 +14,8 @@ router.post("/signIn",async (req,res) => {
 
 router.post("/signUp",async (req,res) => {
     console.log(req.body);
-	var ID =await CreateUser(req,res);
+	var ID = await CreateUser(req,res);
+    console.log(ID);
     res.send(ID);
 });
 

@@ -8,7 +8,7 @@ async function  LoginUser (user_name,password){
 										,[user_name]));
 	if(userExist.length == 0){
 		console.log("user_name does not exists")
-		return ("user_name does not exists");
+		return ({msg : "user name does not exists"});
 	}								
 	else {
 		const hashedPassword = userExist[0].password;
@@ -24,11 +24,11 @@ async function  LoginUser (user_name,password){
 			}
 
 		  	const token = jwt.sign(header, jwtSecretKey);
-			return({result : "success"});
+			return({msg : "登入成功"});
 			} 
 		else {
 			console.log("---------> Password Incorrect");
-			return("Password incorrect!");
+			return({msg : "Password incorrect!"});
 		} 
 	}
 }
@@ -38,11 +38,11 @@ async function  CreateUser (user_name,hashedPassword){
 										,[user_name]));
 	if(user_nameExist.length != 0){
  	   console.log("user_name already exists")
-	   return ("user_name already exists");
+	   return ({msg : "user name already exists"});
 	}								
 	else {
 		await mysql.query ("INSERT INTO user VALUES (0,?,?)", [user_name,hashedPassword]);
-		return ("success");
+		return ({msg : "註冊成功"});
 	}
 }
 

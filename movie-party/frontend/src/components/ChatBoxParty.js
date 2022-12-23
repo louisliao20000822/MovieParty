@@ -7,7 +7,7 @@ const ChatBoxParty = (props) => {
     useEffect(() => {
         (async () => {
             const response = await axios.get(
-              `http://44.235.8.206:4000/api/1.0/chat/party/${props.mId}?room=${props.rId}`
+              `http://localhost:4000/api/1.0/chat/party/${props.mId}?room=${props.rId}`
             ); 
             const interval = setTimeout(() => {
               setData(response.data.result);
@@ -44,7 +44,7 @@ const ChatBoxParty = (props) => {
         // 👇️ prevent page refresh
         event.preventDefault();
         const response = await axios.post(
-          `http://44.235.8.206:4000/api/1.0/party/insertchat`,[{"mId" : props.mId,
+          `http://localhost:4000/api/1.0/party/insertchat`,[{"mId" : props.mId,
                                                       "user_name" : window.localStorage.getItem('Name'),
                                                       "content" : event.target.id.value,
                                                       "report_time" : 0,
@@ -69,10 +69,11 @@ const ChatBoxParty = (props) => {
                     </div>
                     <form onSubmit={handleSubmit} class="form-group px-3 mt-auto">
                         <textarea class="form-control" rows="5" placeholder="Type your message" name="id"></textarea>
-                        <button type="Submit" className='mt-2'>Submit</button>
+                        <button type="submit"  className="button-33 mt-4 mb-4" onClick={()=>{}} >Submit</button>
                     </form>
                 </div>
             </div>
+            
         </>
     );
 

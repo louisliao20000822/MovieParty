@@ -5,6 +5,7 @@ import ChatBoxMovie from '../components/ChatBoxMovie';
 import webSocket from 'socket.io-client'
 import ProgressBar from '../components/ProgressBar';
 import {useParams,useLocation} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Movie = () => {
     const refvideo = useRef();
@@ -12,12 +13,16 @@ const Movie = () => {
     const [connect,setconnect] = useState(0);
     var {mId} = useParams();
 
-
+    let navigate = useNavigate(); 
+    if(!localStorage.getItem('Name')){
+      alert("請先登入");
+      navigate("/")
+      }
 
     useEffect(() => {
         (async () => {
             const response = await axios.get(
-              `http://44.235.8.206:4000/video${mId}`
+              `http://localhost:4000/video${mId}`
             ); 
             setData(response.data.result);
         })();
