@@ -19,11 +19,6 @@ const Party = (props) => {
     const [ws,setWs] = useState(null)
     const [connect,setconnect] = useState(0);
     var socket;
-
-    if(!localStorage.getItem('Name')){
-      alert("請先登入");
-      navigate("/");
-    }
     const connectWebSocket = () => {
         //開啟
          setWs(webSocket('http://44.235.8.206:4000'));
@@ -274,13 +269,17 @@ const Party = (props) => {
             console.log(message);
             var movie = document.querySelector(".movie-box");
             const playBtn = document.getElementById('play-btn');
-            if(message.connect){
-              setconnect(movie.currentTime);
-            }
             if(message.time){
               movie.pause();
               movie.currentTime = message.time;
               showPlayIcon();
+              const response = axios.post(
+                `http://44.235.8.206:4000/api/1.0/party/insertchat`,[{"mId" : props.mId,
+                                                            "user_name" : "anonymous",
+                                                            "content" : window.localStorage.getItem('Name')+"  跳轉影片",
+                                                            "report_time" : 0,
+                                                            "rId" : props.rId}]
+              ); 
 
             }
             if(message.playing=="play"){
@@ -288,13 +287,27 @@ const Party = (props) => {
               movie.play();
               playBtn.classList.replace('fa-play', 'fa-pause');
               playBtn.setAttribute('title', 'Pause');
+              const response = axios.post(
+                `http://44.235.8.206:4000/api/1.0/party/insertchat`,[{"mId" : props.mId,
+                                                            "user_name" : "anonymous",
+                                                            "content" : window.localStorage.getItem('Name')+"  按下開始",
+                                                            "report_time" : 0,
+                                                            "rId" : props.rId}]
+              ); 
             }
 
             else if (message.playing=="pause"){
               movie.currentTime = message.timing;
               movie.pause();
               showPlayIcon();
-            }
+              const response = axios.post(
+                `http://44.235.8.206:4000/api/1.0/party/insertchat`,[{"mId" : props.mId,
+                                                            "user_name" : "anonymous",
+                                                            "content" : window.localStorage.getItem('Name')+"  按下暫停",
+                                                            "report_time" : 0,
+                                                            "rId" : props.rId}]
+              ); 
+              }
         })
 
         ws.on('getMessageLess', message => {
@@ -304,13 +317,13 @@ const Party = (props) => {
               sendMessageid(message.connect,{time : movie.currentTime,playing : movie.paused,"room" : query.get('room')});
             } 
             if(message.new){
-              // alert("New user "+message.name+" connected");
               movie.pause();
               showPlayIcon();
+              setTimeout(function() { alert("New user "+message.name+" connected"); }, 1);
             }
         })
         ws.on('connect' , () => {
-          sendMessageLess({connect : ws.id,"room" : query.get('room')})
+          sendMessageLess({"connect" : ws.id,"room" : query.get('room')})
         });   
 
       }

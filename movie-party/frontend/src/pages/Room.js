@@ -47,7 +47,7 @@ const Room = () => {
 
     return(
         <div>
-            <Party mId={mId}/>
+            <Party mId={mId} rId={query.get('room')}/>
             <div class="profile-container">
                 <div class="row row-space-20">
                     <div class="col-md-8">

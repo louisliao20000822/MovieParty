@@ -9,6 +9,7 @@ app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 
 app.use(cors());
 app.use(express.static('public'))
+app.use("/.well-known",express.static('.well-known'));
 app.use('/api/1.0',require('./route/chat'));
 app.use('/api/1.0',require('./route/movie'));
 app.use('/api/1.0',require('./route/user'));

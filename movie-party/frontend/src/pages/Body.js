@@ -34,15 +34,15 @@ const Body = () => {
                     <ul class="filter-list">
 
                     <li>
-                        <button class="filter-btn">Marvel</button>
+                        <button class="filter-btn" onClick={()=>{filter = "marvel"}}>Marvel</button>
                     </li>
 
                     <li>
-                        <button class="filter-btn">Comedy</button>
+                        <button class="filter-btn" onClick={()=>{filter = "comedy"}}>Comedy</button>
                     </li>
 
                     <li>
-                        <button class="filter-btn">Anime</button>
+                        <button class="filter-btn" onClick={()=>{filter = "marvel"}} >Anime</button>
                     </li>
 
                     </ul>

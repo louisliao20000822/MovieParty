@@ -33,7 +33,15 @@ const Header = () => {
                     <li className="nav-item">
                         <Link to="/"  className="nav-item nav-link " id="woman-tag" >電影</Link>
                     </li>
-
+                    <div className="d-xl-none" >
+                        <a href="Member" className="nav-item me-3">
+                            {!localStorage.getItem('Name')&&
+                            <button class="btn btn-primary mt-1">Sign in</button>
+                            }
+                            {localStorage.getItem('Name')&&
+                            <button class="btn btn-primary mt-1"  onClick={()=>{localStorage.removeItem('Name')}}>Log out</button>}
+                        </a>
+                    </div>
                 </ul>
 
             
