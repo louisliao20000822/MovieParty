@@ -21,8 +21,8 @@ const Party = (props) => {
     var socket;
 
     if(!localStorage.getItem('Name')){
-    alert("請先登入");
-    navigate("/")
+      alert("請先登入");
+      navigate("/");
     }
     const connectWebSocket = () => {
         //開啟
@@ -284,12 +284,14 @@ const Party = (props) => {
 
             }
             if(message.playing=="play"){
+              movie.currentTime = message.timing;
               movie.play();
               playBtn.classList.replace('fa-play', 'fa-pause');
               playBtn.setAttribute('title', 'Pause');
             }
 
             else if (message.playing=="pause"){
+              movie.currentTime = message.timing;
               movie.pause();
               showPlayIcon();
             }
@@ -352,9 +354,9 @@ const Party = (props) => {
       console.log(ws.id);
       var message;
       if(movie.paused)
-        message ={playing : "play","room" : query.get('room')};
+        message ={playing : "play","room" : query.get('room'), "timing" : movie.currentTime};
       else
-        message = {playing : "pause","room" : query.get('room')};  
+        message = {playing : "pause","room" : query.get('room'),"timing" : movie.currentTime};  
       sendMessage(message);
     }
 
