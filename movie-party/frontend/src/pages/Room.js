@@ -18,7 +18,7 @@ const Room = () => {
         console.log(code.mId);
         (async () => {
             const response = await axios.get(
-              `http://localhost:4000/api/1.0/chat/room/${code.mId}?room=${query.get('room')}`
+              `http://44.235.8.206:4000/api/1.0/chat/room/${code.mId}?room=${query.get('room')}`
             ); 
             console.log(response.data.result);
             setmId(response.data.result[0].mId);
@@ -29,7 +29,7 @@ const Room = () => {
     // useEffect(() => {
     //     (async () => {
     //         const response = await axios.get(
-    //           `http://localhost:4000/friendlist`
+    //           `http://44.235.8.206:4000/friendlist`
     //         ); 
     //         console.log(response.data[query.get('room')]);
     //         const interval = setTimeout(() => {

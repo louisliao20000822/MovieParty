@@ -26,7 +26,7 @@ const Party = (props) => {
     }
     const connectWebSocket = () => {
         //開啟
-         setWs(webSocket('http://localhost:4000'));
+         setWs(webSocket('http://44.235.8.206:4000'));
     }
 
 
@@ -57,7 +57,7 @@ const Party = (props) => {
     useEffect(() => {
         (async () => {
             const response = await axios.get(
-              `http://localhost:4000/`
+              `http://44.235.8.206:4000/`
             ); 
             setData(response.data.result);
         })();
@@ -251,7 +251,7 @@ const Party = (props) => {
     // useEffect(() => {
 
     //         const response = await axios.get(
-    //           "http://localhost:4000/api/1.0/chat/spider-man?mId=1"
+    //           "http://44.235.8.206:4000/api/1.0/chat/spider-man?mId=1"
     //         ); 
     //         const interval = setTimeout(() => {
     //           setData(response.data.result);
@@ -302,6 +302,7 @@ const Party = (props) => {
               sendMessageid(message.connect,{time : movie.currentTime,playing : movie.paused,"room" : query.get('room')});
             } 
             if(message.new){
+              // alert("New user "+message.name+" connected");
               movie.pause();
               showPlayIcon();
             }
@@ -374,7 +375,7 @@ const Party = (props) => {
               <body>
                 <div className="video-box">
                   <div className="player" id="player">
-                    <video className="player_video viewer movie-box"  ref={refvideo} id="video" src={`http://localhost:4000/video${mId} `} onClick={handleclick}></video>
+                    <video className="player_video viewer movie-box"  ref={refvideo} id="video" src={`http://44.235.8.206:4000/video${mId} `} onClick={handleclick}></video>
                     <div className="player_controls" onClick={handleseek}>
                       <div className="progress-range" title="Jump-to">
                         <div className="progress-bar" ></div>
