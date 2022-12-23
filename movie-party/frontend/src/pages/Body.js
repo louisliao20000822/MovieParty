@@ -7,6 +7,7 @@ import './movie.css'
 import InsertMovie from '../components/InsertMovie'
 
 const Body = () => {
+    var filter;
     const [data, setData] = useState();
     useEffect(() => {
         api.getMovies().then((json)=> {console.log(json.result);setData(json.result);})
