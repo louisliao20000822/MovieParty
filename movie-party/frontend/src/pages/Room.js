@@ -7,9 +7,14 @@ import ProgressBar from '../components/ProgressBar';
 import {useParams,useLocation} from "react-router-dom";
 import Party from './Party';
 import FriendList from '../components/FriendList';
+import { useNavigate } from "react-router-dom";
 const Room = () => {
 
-
+    let navigate = useNavigate(); 
+    if(!localStorage.getItem('Name')){
+        alert("請先登入");
+        navigate("/");
+      }
     const useQuery = () => new URLSearchParams(useLocation().search);
     const code = useParams();
     const query = useQuery();
