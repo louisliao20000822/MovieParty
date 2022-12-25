@@ -21,7 +21,7 @@ const Party = (props) => {
     var socket;
     const connectWebSocket = () => {
         //開啟
-         setWs(webSocket('http://localhost:4000'));
+         setWs(webSocket('http://44.235.8.206:4000'));
     }
 
 
@@ -52,7 +52,7 @@ const Party = (props) => {
     useEffect(() => {
         (async () => {
             const response = await axios.get(
-              `http://localhost:4000/`
+              `http://44.235.8.206:4000/`
             ); 
             setData(response.data.result);
         })();
@@ -61,7 +61,7 @@ const Party = (props) => {
           const playBtn = document.getElementById('play-btn');
           playBtn.addEventListener('click', handleclick);
           const response = axios.post(
-            `http://localhost:4000/api/1.0/party/insertchat`,[{"mId" : props.mId,
+            `http://44.235.8.206:4000/api/1.0/party/insertchat`,[{"mId" : props.mId,
                                                         "user_name" : "anonymous",
                                                         "content" : window.localStorage.getItem('Name')+"  加入聊天室",
                                                         "report_time" : 0,
@@ -254,7 +254,7 @@ const Party = (props) => {
     // useEffect(() => {
 
     //         const response = await axios.get(
-    //           "http://localhost:4000/api/1.0/chat/spider-man?mId=1"
+    //           "http://44.235.8.206:4000/api/1.0/chat/spider-man?mId=1"
     //         ); 
     //         const interval = setTimeout(() => {
     //           setData(response.data.result);
@@ -282,7 +282,7 @@ const Party = (props) => {
               movie.currentTime = message.time;
               showPlayIcon();
               const response = axios.post(
-                `http://localhost:4000/api/1.0/party/insertchat`,[{"mId" : props.mId,
+                `http://44.235.8.206:4000/api/1.0/party/insertchat`,[{"mId" : props.mId,
                                                             "user_name" : "anonymous",
                                                             "content" : window.localStorage.getItem('Name')+"  跳轉影片",
                                                             "report_time" : 0,
@@ -296,7 +296,7 @@ const Party = (props) => {
               playBtn.classList.replace('fa-play', 'fa-pause');
               playBtn.setAttribute('title', 'Pause');
               const response = axios.post(
-                `http://localhost:4000/api/1.0/party/insertchat`,[{"mId" : props.mId,
+                `http://44.235.8.206:4000/api/1.0/party/insertchat`,[{"mId" : props.mId,
                                                             "user_name" : "anonymous",
                                                             "content" : window.localStorage.getItem('Name')+"  按下開始",
                                                             "report_time" : 0,
@@ -309,7 +309,7 @@ const Party = (props) => {
               movie.pause();
               showPlayIcon();
               const response = axios.post(
-                `http://localhost:4000/api/1.0/party/insertchat`,[{"mId" : props.mId,
+                `http://44.235.8.206:4000/api/1.0/party/insertchat`,[{"mId" : props.mId,
                                                             "user_name" : "anonymous",
                                                             "content" : window.localStorage.getItem('Name')+"  按下暫停",
                                                             "report_time" : 0,
@@ -397,7 +397,7 @@ const Party = (props) => {
               <body>
                 <div className="video-box">
                   <div className="player" id="player">
-                    <video className="player_video viewer movie-box"  ref={refvideo} id="video" src={`http://localhost:4000/video${mId} `} onClick={handleclick}></video>
+                    <video className="player_video viewer movie-box"  ref={refvideo} id="video" src={`http://44.235.8.206:4000/video${mId} `} onClick={handleclick}></video>
                     <div className="player_controls" onClick={handleseek}>
                       <div className="progress-range" title="Jump-to">
                         <div className="progress-bar" ></div>

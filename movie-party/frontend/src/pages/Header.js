@@ -25,7 +25,7 @@ const Header = () => {
             
             
             
-                <ul className=" navbar-nav me-auto col-xl-4 col-12 justify-content-center justify-content-xl-start hstack">
+                <ul className=" navbar-nav me-auto col-xl-6 col-12 justify-content-center justify-content-xl-start hstack">
                     <li className="nav-item ">
                         <Link to="/"   className="nav-item nav-link active" id ="man-tag" >首頁</Link>
                     </li>
