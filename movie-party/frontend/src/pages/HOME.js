@@ -24,6 +24,9 @@ function HOME() {
     <Header/>
     <Routes>
         <Route path= "/" element={<><Body/></>}/>
+        <Route path= "/marvel" element={<><Body cate={"marvel"}/></>}/>
+        <Route path= "/comedy" element={<><Body cate={"comedy"}/></>}/>
+        <Route path= "/anime" element={<><Body cate={"anime"}/></>}/>
         {/* <Route path= "Test" element={<><Test/></>}/> */}
         <Route path= "Member" element={<><Member/></>}/>
         <Route path= {"Movie/:mId"} element={<><Movie/></>}/>  

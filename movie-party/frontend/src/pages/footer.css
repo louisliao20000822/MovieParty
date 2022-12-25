@@ -1,7 +1,8 @@
 
 
-.footer .logo-img{
+.footer .footer-logo-img{
     width:100px;
+    margin-left: -500px;
 }
   .footer-top {
     background: url("../images/footer-bg.jpg") no-repeat;
@@ -10,11 +11,7 @@
     padding-block: 80px 50px;
   }
   
-  .footer-brand-wrapper .logo {
-    width: max-content;
-    margin-inline: auto;
-    margin-bottom: 60px;
-  }
+
   
   .footer-list,
   .quicklink-list,

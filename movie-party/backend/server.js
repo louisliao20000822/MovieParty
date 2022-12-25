@@ -51,20 +51,72 @@ app.get('/video5',(req,res) =>{
     res.sendFile(resolverPath);
 })
 
-app.get('/video5',(req,res) =>{
-    const VIDEO_FILE_PATH = 'assert/thor.mp4'
+app.get('/video6',(req,res) =>{
+    const VIDEO_FILE_PATH = 'assert/6.mp4'
     const resolverPath = path.resolve(VIDEO_FILE_PATH);
     res.sendFile(resolverPath);
 })
 
-app.get('/video5',(req,res) =>{
-    const VIDEO_FILE_PATH = 'assert/thor.mp4'
+
+app.get('/video7',(req,res) =>{
+    const VIDEO_FILE_PATH = 'assert/7.mp4'
     const resolverPath = path.resolve(VIDEO_FILE_PATH);
     res.sendFile(resolverPath);
 })
 
-app.get('/video5',(req,res) =>{
-    const VIDEO_FILE_PATH = 'assert/thor.mp4'
+app.get('/video8',(req,res) =>{
+    const VIDEO_FILE_PATH = 'assert/8.mp4'
+    const resolverPath = path.resolve(VIDEO_FILE_PATH);
+    res.sendFile(resolverPath);
+})
+
+app.get('/video9',(req,res) =>{
+    const VIDEO_FILE_PATH = 'assert/9.mp4'
+    const resolverPath = path.resolve(VIDEO_FILE_PATH);
+    res.sendFile(resolverPath);
+})
+
+
+app.get('/video10',(req,res) =>{
+    const VIDEO_FILE_PATH = 'assert/10.mp4'
+    const resolverPath = path.resolve(VIDEO_FILE_PATH);
+    res.sendFile(resolverPath);
+})
+
+app.get('/video11',(req,res) =>{
+    const VIDEO_FILE_PATH = 'assert/11.mp4'
+    const resolverPath = path.resolve(VIDEO_FILE_PATH);
+    res.sendFile(resolverPath);
+})
+
+app.get('/video12',(req,res) =>{
+    const VIDEO_FILE_PATH = 'assert/12.mp4'
+    const resolverPath = path.resolve(VIDEO_FILE_PATH);
+    res.sendFile(resolverPath);
+})
+app.get('/video13',(req,res) =>{
+    const VIDEO_FILE_PATH = 'assert/13.mp4'
+    const resolverPath = path.resolve(VIDEO_FILE_PATH);
+    res.sendFile(resolverPath);
+})
+app.get('/video14',(req,res) =>{
+    const VIDEO_FILE_PATH = 'assert/14.mp4'
+    const resolverPath = path.resolve(VIDEO_FILE_PATH);
+    res.sendFile(resolverPath);
+})
+app.get('/video15',(req,res) =>{
+    const VIDEO_FILE_PATH = 'assert/15.mp4'
+    const resolverPath = path.resolve(VIDEO_FILE_PATH);
+    res.sendFile(resolverPath);
+})
+
+app.get('/video16',(req,res) =>{
+    const VIDEO_FILE_PATH = 'assert/16.mp4'
+    const resolverPath = path.resolve(VIDEO_FILE_PATH);
+    res.sendFile(resolverPath);
+})
+app.get('/video17',(req,res) =>{
+    const VIDEO_FILE_PATH = 'assert/17.mp4'
     const resolverPath = path.resolve(VIDEO_FILE_PATH);
     res.sendFile(resolverPath);
 })
@@ -74,7 +126,7 @@ app.get('/friendlist',(req,res) =>{
 })
 
   const server = app.listen(4000, () => {
-	console.log('The application is running on 44.235.8.206:4000!')
+	console.log('The application is running on localhost:4000!')
 });
 
 

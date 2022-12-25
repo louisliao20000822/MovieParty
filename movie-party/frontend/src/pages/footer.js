@@ -17,31 +17,27 @@ const Footer = () => {
     
             <div class="footer-brand-wrapper">
     
-              <a href="./index.html" class="logo">
-                <img className='logo-img' src={require('../images/logo.png')} alt="Filmlane logo"/>
-              </a>
     
               <ul class="footer-list">
-    
+              <a href="/" class="logo">
+                <img className='footer-logo-img' src={require('../images/logo.png')} alt="Filmlane logo"/>
+              </a>
                 <li>
-                  <a href="./index.html" class="footer-link">Home</a>
+                  <a href="/" class="footer-link">Home</a>
                 </li>
     
                 <li>
-                  <a href="#" class="footer-link">Movie</a>
+                  <a href="/comedy" class="footer-link">Comedy</a>
                 </li>
     
                 <li>
-                  <a href="#" class="footer-link">TV Show</a>
+                  <a href="/marvel" class="footer-link">Marvel</a>
                 </li>
     
                 <li>
-                  <a href="#" class="footer-link">Web Series</a>
+                  <a href="/anime" class="footer-link">Anime</a>
                 </li>
     
-                <li>
-                  <a href="#" class="footer-link">Pricing</a>
-                </li>
     
               </ul>
     
@@ -51,25 +47,6 @@ const Footer = () => {
     
             <div class="quicklink-wrapper">
     
-              <ul class="quicklink-list">
-    
-                <li>
-                  <a href="#" class="quicklink-link">Faq</a>
-                </li>
-    
-                <li>
-                  <a href="#" class="quicklink-link">Help center</a>
-                </li>
-    
-                <li>
-                  <a href="#" class="quicklink-link">Terms of use</a>
-                </li>
-    
-                <li>
-                  <a href="#" class="quicklink-link">Privacy</a>
-                </li>
-    
-              </ul>
     
               <ul class="social-list">
     

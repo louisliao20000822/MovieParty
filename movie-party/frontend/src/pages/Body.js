@@ -5,16 +5,18 @@ import React, { useEffect, useState} from 'react';
 import api from '../api/api'
 import './movie.css'
 import InsertMovie from '../components/InsertMovie'
+import {useParams,useLocation} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-const Body = () => {
-    var filter;
+const Body = (props) => {
+    var cate = props.cate;
     const [data, setData] = useState();
     useEffect(() => {
         api.getMovies().then((json)=> {console.log(json.result);setData(json.result);})
 
     }, []);
     
-
+    let navigate = useNavigate(); 
     if(!data) return null;
 
     return(
@@ -28,51 +30,52 @@ const Body = () => {
                 <div class="flex-wrapper">
 
                     <div class="title-wrapper">
-                    <p class="section-subtitle">Online Streaming</p>
+                    <p class="section-subtitle ms-4">Categories</p>
 
                     </div>
 
                     <ul class="filter-list">
 
                     <li>
-                        <button class="filter-btn" onClick={()=>{filter = "marvel"}}>Marvel</button>
+                        <button class="filter-btn" onClick={()=>{navigate("/marvel")}}>Marvel</button>
                     </li>
 
                     <li>
-                        <button class="filter-btn" onClick={()=>{filter = "comedy"}}>Comedy</button>
+                        <button class="filter-btn" onClick={()=>{navigate("/comedy")}}>Comedy</button>
                     </li>
 
                     <li>
-                        <button class="filter-btn" onClick={()=>{filter = "marvel"}} >Anime</button>
+                        <button class="filter-btn" onClick={()=>{navigate("/anime")}} >Anime</button>
                     </li>
 
                     </ul>
 
                 </div>
-                <h2 class="h2 section-title">Marvel</h2>    
+                {cate!="comedy"&&cate!="anime"&&<h2 class="h2 section-title">Marvel</h2>}    
 
                 <ul class="movies-list ">
 
 
 
 
-                        {
-                                data.map((Data, i) =>
+                        {   
+                            
+                            cate!="comedy"&&cate!="anime"&&data.map((Data, i) =>
                                     <InsertMovie data = {Data} cate={"marvel"}/>
                         )}      
 
                 </ul>
-                <h2 class="h2 section-title">Comedy</h2>
+                {cate!="marvel"&&cate!="anime"&&<h2 class="h2 section-title">Comedy</h2>}
                 <ul class="movies-list ">
                         {
-                                data.map((Data, i) =>
+                                cate!="marvel"&&cate!="anime"&&data.map((Data, i) =>
                                     <InsertMovie data = {Data} cate={"comedy"}/>
                         )}    
                 </ul>        
-                <h2 class="h2 section-title">Anime</h2>
+                {cate!="comedy"&&cate!="marvel"&&<h2 class="h2 section-title">Anime</h2>}
                 <ul class="movies-list ">
                         {
-                                data.map((Data, i) =>
+                                cate!="comedy"&&cate!="marvel"&&data.map((Data, i) =>
                                     <InsertMovie data = {Data} cate={"anime"}/>
                         )}
                 </ul>    

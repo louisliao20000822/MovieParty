@@ -31,7 +31,15 @@ const Header = () => {
                     </li>
                     <li className="vr align-self-center " id = "black-vr"></li>
                     <li className="nav-item">
-                        <Link to="/"  className="nav-item nav-link " id="woman-tag" >電影</Link>
+                        <Link to="/marvel"  className="nav-item nav-link " id="woman-tag" >漫威</Link>
+                    </li>
+                    <li className="vr align-self-center " id = "black-vr"></li>
+                    <li className="nav-item">
+                        <Link to="/comedy"  className="nav-item nav-link " id="woman-tag" >喜劇</Link>
+                    </li>
+                    <li className="vr align-self-center " id = "black-vr"></li>
+                    <li className="nav-item">
+                        <Link to="/anime"  className="nav-item nav-link " id="woman-tag" >動漫</Link>
                     </li>
                     <div className="d-xl-none" >
                         <a href="Member" className="nav-item me-3">
