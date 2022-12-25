@@ -281,13 +281,6 @@ const Party = (props) => {
               movie.pause();
               movie.currentTime = message.time;
               showPlayIcon();
-              const response = axios.post(
-                `http://44.235.8.206:4000/api/1.0/party/insertchat`,[{"mId" : props.mId,
-                                                            "user_name" : "anonymous",
-                                                            "content" : window.localStorage.getItem('Name')+"  跳轉影片",
-                                                            "report_time" : 0,
-                                                            "rId" : props.rId}]
-              ); 
 
             }
             if(message.playing=="play"){
@@ -295,26 +288,13 @@ const Party = (props) => {
               movie.play();
               playBtn.classList.replace('fa-play', 'fa-pause');
               playBtn.setAttribute('title', 'Pause');
-              const response = axios.post(
-                `http://44.235.8.206:4000/api/1.0/party/insertchat`,[{"mId" : props.mId,
-                                                            "user_name" : "anonymous",
-                                                            "content" : window.localStorage.getItem('Name')+"  按下開始",
-                                                            "report_time" : 0,
-                                                            "rId" : props.rId}]
-              ); 
             }
 
             else if (message.playing=="pause"){
               movie.currentTime = message.timing;
               movie.pause();
               showPlayIcon();
-              const response = axios.post(
-                `http://44.235.8.206:4000/api/1.0/party/insertchat`,[{"mId" : props.mId,
-                                                            "user_name" : "anonymous",
-                                                            "content" : window.localStorage.getItem('Name')+"  按下暫停",
-                                                            "report_time" : 0,
-                                                            "rId" : props.rId}]
-              ); 
+
               }
         })
 
@@ -364,6 +344,13 @@ const Party = (props) => {
       event.preventDefault();
       console.log("seek");
       var movie = document.querySelector(".movie-box");
+      const response = axios.post(
+        `http://44.235.8.206:4000/api/1.0/party/insertchat`,[{"mId" : props.mId,
+                                                    "user_name" : "anonymous",
+                                                    "content" : window.localStorage.getItem('Name')+"  跳轉影片",
+                                                    "report_time" : 0,
+                                                    "rId" : props.rId}]
+      ); 
       sendMessage({time : movie.currentTime,"room" : query.get('room')});
     }
         
@@ -373,10 +360,27 @@ const Party = (props) => {
       console.log(movie.paused);
       console.log(ws.id);
       var message;
-      if(movie.paused)
+      if(movie.paused){
         message ={playing : "play","room" : query.get('room'), "timing" : movie.currentTime};
-      else
+        const response = axios.post(
+          `http://44.235.8.206:4000/api/1.0/party/insertchat`,[{"mId" : props.mId,
+                                                      "user_name" : "anonymous",
+                                                      "content" : window.localStorage.getItem('Name')+"  按下開始",
+                                                      "report_time" : 0,
+                                                      "rId" : props.rId}]
+        ); 
+
+      }  
+      else{
         message = {playing : "pause","room" : query.get('room'),"timing" : movie.currentTime};  
+        const response = axios.post(
+          `http://44.235.8.206:4000/api/1.0/party/insertchat`,[{"mId" : props.mId,
+                                                      "user_name" : "anonymous",
+                                                      "content" : window.localStorage.getItem('Name')+"  按下暫停",
+                                                      "report_time" : 0,
+                                                      "rId" : props.rId}]
+        ); 
+      }
       sendMessage(message);
     }
 
