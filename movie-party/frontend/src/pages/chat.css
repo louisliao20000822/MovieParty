@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+body{
+	font-family: 'Roboto', sans-serif;
+}
+
+h6{
+	font-size: 15px;
+}
+.card{
+	width: 300px;
+	height: 550px;
+	border: none;
+	border-radius: 15px;
+    background-color: #e9e4df83;
+
+}
+.adiv{
+	background: #6e7777;
+	border-radius: 15px;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+	font-size: 12px;
+	height: 46px;
+}
+.chat{
+	border: none;
+	background: #E2FFE8;
+	font-size: 10px;
+	border-radius: 20px;
+}
+.bg-white{
+	border: 1px solid #cacada67;
+	font-size: 10px;
+	border-radius: 20px;
+}
+.myvideo img{
+	border-radius: 20px
+}
+.dot{
+	font-weight: bold;
+}
+.form-group{
+	height: 140px;
+}
+
+.form-control{
+	border-radius: 12px;
+	border: 1px solid #F0F0F0;
+	font-size: 12px;
+}
+.form-control:focus{
+	box-shadow: none;
+	}
+.form-control::placeholder{
+	font-size: 12px;
+	color: #C4C4C4;
+}
+
+
+.chat-box{
+	height: 550px;
+	overflow: auto;
+	display: flex;
+	flex-direction: column-reverse;
+}
+
+
+
+/* CSS */
+.button-33 {
+  background-color: #323835;
+  border-radius: 100px;
+  box-shadow: rgba(39, 43, 40, 0.2) 0 -25px 18px -14px inset,rgba(65, 88, 74, 0.15) 0 1px 2px,rgba(46, 59, 51, 0.15) 0 2px 4px,rgba(19, 20, 19, 0.15) 0 4px 8px,rgba(68, 80, 73, 0.15) 0 8px 16px,rgba(53, 61, 56, 0.15) 0 16px 32px;
+  color: rgb(209, 206, 193);
+  cursor: pointer;
+  display: inline-block;
+  font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-33:hover {
+  box-shadow: rgba(42, 63, 51, 0.35) 0 -25px 18px -14px inset,rgba(36, 44, 39, 0.25) 0 1px 2px,rgba(59, 73, 64, 0.25) 0 2px 4px,rgba(23, 26, 24, 0.25) 0 4px 8px,rgba(33, 36, 34, 0.25) 0 8px 16px,rgba(20, 20, 20, 0.25) 0 16px 32px;
+  transform: scale(1.05) rotate(-1deg);
+}
+
+
+/*==================================================
+  Nearby People CSS
+  ==================================================*/
+
+.f-list{
+	width: 1000px;
+
+}  
+
+ 
+.profile-container {
+    padding: 1.5625rem;
+}
+@media (max-width: 967px) {
+    .profile-header-img {
+        width: 5.625rem;
+        height: 5.625rem;
+        margin: 0;
+    }
+    .profile-header-info {
+        margin-left: 6.5625rem;
+        padding-bottom: 0.9375rem;
+    }
+    .profile-header .profile-header-tab {
+        padding-left: 0;
+    }
+}
+@media (max-width: 767px) {
+    .profile-header .profile-header-cover {
+        background-position: top;
+    }
+    .profile-header-img {
+        width: 3.75rem;
+        height: 3.75rem;
+        margin: 0;
+    }
+    .profile-header-info {
+        margin-left: 4.6875rem;
+        padding-bottom: 0.9375rem;
+    }
+    .profile-header-info h4 {
+        margin: 0 0 0.3125rem;
+    }
+    .profile-header .profile-header-tab {
+        white-space: nowrap;
+        overflow: scroll;
+        padding: 0;
+    }
+    .profile-container {
+        padding: 0.9375rem 0.9375rem 3.6875rem;
+    }
+    .friend-list > li {
+        float: none;
+        width: auto;
+    }
+}
+.profile-info-list {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+.friend-list,
+.img-grid-list {
+    margin: -1px;
+    list-style-type: none;
+}
+.profile-info-list > li.title {
+    font-size: 0.625rem;
+    font-weight: 700;
+    color: #8a8a8f;
+    padding: 0 0 0.3125rem;
+}
+.profile-info-list > li + li.title {
+    padding-top: 1.5625rem;
+}
+.profile-info-list > li {
+    padding: 0.625rem 0;
+}
+.profile-info-list > li .field {
+    font-weight: 700;
+}
+.profile-info-list > li .value {
+    color: #666;
+}
+.profile-info-list > li.img-list a {
+    display: inline-block;
+}
+.profile-info-list > li.img-list a img {
+    max-width: 2.25rem;
+    -webkit-border-radius: 2.5rem;
+    -moz-border-radius: 2.5rem;
+    border-radius: 2.5rem;
+}
+.coming-soon-cover img,
+.email-detail-attachment .email-attachment .document-file img,
+.email-sender-img img,
+.friend-list .friend-img img,
+.profile-header-img img {
+    max-width: 100%;
+}
+.table.table-profile th {
+    border: none;
+    color: #000;
+    padding-bottom: 0.3125rem;
+    padding-top: 0;
+}
+.table.table-profile td {
+    border-color: #c8c7cc;
+}
+.table.table-profile tbody + thead > tr > th {
+    padding-top: 1.5625rem;
+}
+.table.table-profile .field {
+    color: #666;
+    font-weight: 600;
+    width: 25%;
+    text-align: right;
+}
+.table.table-profile .value {
+    font-weight: 500;
+}
+
+.friend-list {
+    padding: 0;
+}
+.friend-list > li {
+    float: left;
+    width: 50%;
+}
+.friend-list > li > a {
+    display: block;
+    text-decoration: none;
+    color: #000;
+    padding: 0.625rem;
+    margin: 1px;
+    background: #fff;
+}
+.friend-list > li > a:after,
+.friend-list > li > a:before {
+    content: "";
+    display: table;
+    clear: both;
+}
+.friend-list .friend-img {
+    float: left;
+    width: 3rem;
+    height: 3rem;
+    overflow: hidden;
+    background: #efeff4;
+}
+.friend-list .friend-info {
+    margin-left: 3.625rem;
+}
+.friend-list .friend-info h4 {
+    margin: 0.3125rem 0;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+.friend-list .friend-info p {
+    color: #666;
+    margin: 0;
+}
