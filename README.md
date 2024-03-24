@@ -15,7 +15,9 @@
 
 
 ## Main features
+*類似彈墓系統在指定時間留言 每個之後看該影片的都會看到(Watch online)
 
+![](https://github.com/louisliao20000822/MovieParty/blob/main/movie-party/gif/2024-03-2414-12-44online-video-cutter.com1-ezgif.com-video-to-gif-converter.gif)
 * Watch movie with real-time chatbox
   
 ![](https://github.com/louisliao20000822/MovieParty/blob/main/movie-party/gif/2024-03-2411-59-58online-video-cutter.com1-ezgif.com-video-to-gif-converter.gif)
