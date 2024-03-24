@@ -16,4 +16,10 @@
 
 ## Main features
 
-### Watch movie with real-time chatbox
+* Watch movie with real-time chatbox
+  
+![](https://github.com/louisliao20000822/MovieParty/blob/main/movie-party/gif/2024-03-2411-59-58online-video-cutter.com1-ezgif.com-video-to-gif-converter.gif)
+
+* Watch movie with friend(可以互相暫停、跳轉影片)
+  
+![](https://github.com/louisliao20000822/MovieParty/blob/main/movie-party/gif/2024-03-2412-01-06online-video-cutter.com-ezgif.com-video-to-gif-converter.gif)
