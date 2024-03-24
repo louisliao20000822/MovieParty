@@ -4,7 +4,7 @@
 
 ### Deployment
 
-1. Install packages: ```npm install```(backend and frontend both)
+1. Install packages: ```cd backend && npm install  cd frontend && npm install```(backend and frontend both)
 2. Start MySQL server
 3. Import database:
     1. ```mysql -u <user_name> -p <stylish_db_name> < movie-party.sql```
