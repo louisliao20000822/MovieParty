@@ -126,7 +126,7 @@ app.get('/friendlist',(req,res) =>{
 })
 
   const server = app.listen(4000, () => {
-	console.log('The application is running on 44.235.8.206:4000!')
+	console.log('The application is running on localhost:4000!')
 });
 
 
