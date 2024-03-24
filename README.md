@@ -13,3 +13,7 @@
 7. Start server: ```npm run backend && npm run frontend```
 8. Clear Browser localStorage if needed. The same address will use the same space to records localStorage key-value pairs and it may conflict with mine. (Optional)
 
+
+## Main features
+
+### Watch movie with real-time chatbox
