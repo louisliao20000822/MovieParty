@@ -13,6 +13,18 @@
 7. Start server: ```npm run backend && npm run frontend```
 8. Clear Browser localStorage if needed. The same address will use the same space to records localStorage key-value pairs and it may conflict with mine. (Optional)
 
+### Technologies
+
+- **Back-End:** Node.js, Express, NGINX, RESTful API
+
+- **Front-End:** HTML, CSS, JavaScript, Bootstrap, Ajax
+
+- **Database:** MySQL
+
+- **Cloud Service (AWS):** Elastic Compute Cloud (EC2), S3
+
+- **Open Source Tools:** Socket.IO
+
 
 ## Main features
 *類似彈墓系統在指定時間留言 每個之後看該影片的都會看到(Watch online)
